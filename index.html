@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheet/main.css">
+    <link rel="stylesheet" href="./stylesheet/modal.css">
+    <title>another, Good day</title>
+</head>
+<body>
+        <div class="container">
+            <div class="background">
+                <img class="temp-img" src="" />
+                <div class="location">
+                    <div class='date'>Mon 4 Jan 2021</div>
+                    <div class="button-container">
+                        <button class="rounded">F</button>
+                        <button class="rounded active">C</button>
+                    </div>
+                    
+                </div>
+                <div class="search">
+                    <small>City</small> <input class="place" autocomplete='off' placeholder="Search for a city..." onkeyup="onchangeCity(event)">
+                    
+                    <div class="error"></div>
+                </div>
+                <div class="temp">
+                        <span class="temp-value"></span> <span class="temp-unit cel"></span>
+                    </div>
+                <div class="weather">
+                    <div class="place-container">
+                        <h4 class="place-name"></h4>
+                        <h6 class="status"></h6>
+                        <div class="info">
+                            <div class='current'>
+                                <div class='feels-wrapper'>Feels like</div>
+                                    <div class='feels'>5</div>
+                                <div class="hum-wrapper">Humidity</div>
+                                    <div class='hum'>82</div>
+                            </div>
+                                <b class="min"></b><span class="temp-unit cel"></span> / <b class="max">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    <script src='main.js'></script>
+    <div class="modal is-open">
+        <div class="modal-text">
+            <h1 class="modal-title">another, Good day</h1>
+            <h2>by Cindy Li</h2>
+            <p>Welcome to a weather app, an app that can be easy to check the weather in anywhere in the world. 
+            </p>
+            <button class="modal-close">Get Started!</button>
+        </div>
+    
+        <div class="modal-screen"></div>
+        <script src="modal.js"></script>
+    </div>
+</body>
+</html>
