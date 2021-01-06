@@ -13,7 +13,7 @@
     left: 0;
     right: 0;
     z-index: 2;
-    background: linear-gradient(lightblue, darkblue)
+    background-image: url(../background_1.jpg);
 }
 
 .modal-text {
@@ -44,6 +44,7 @@
     line-height: 22px;
     letter-spacing: 0.5px;
     margin-bottom: 20px;
+    color: gray;
 }
 
 .modal-text > p {
@@ -52,6 +53,7 @@
     line-height: 22px;
     letter-spacing: 1px;
     margin-bottom: 15px;
+    color: rgb(101, 101, 141);
 }
 
 .modal-close {
