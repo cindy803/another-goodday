@@ -40,7 +40,7 @@ function getInfo(city) {
       let min = document.querySelector('.min');
       let max = document.querySelector('.max');
 
-      for (let i of data.list.slice(0,9)){
+      for (let i of data.list.slice(0,8)){
         minArray.push(Number(i.main.temp_min)) ; 
         maxArray.push(Number(i.main.temp_max)); 
         tempArray.push(Number(i.main.temp)) 
@@ -59,7 +59,7 @@ function getInfo(city) {
         let max1 = document.querySelector('.thur-max');
         let temp2 = document.querySelector('.thur-temp');
 
-        for (let i of data.list.slice(9,18)){
+        for (let i of data.list.slice(8,16)){
           minArray1.push(Number(i.main.temp_min)) ; 
           maxArray1.push(Number(i.main.temp_max)); 
           // temp2.push(Number(i.main.temp))
@@ -76,7 +76,7 @@ function getInfo(city) {
         let min2 = document.querySelector('.fri-min');
         let max2 = document.querySelector('.fri-max');
 
-        for (let i of data.list.slice(18,24)){
+        for (let i of data.list.slice(16,24)){
           minArray2.push(Number(i.main.temp_min)) ; 
           maxArray2.push(Number(i.main.temp_max)); 
       
