@@ -13,12 +13,13 @@
     left: 0;
     right: 0;
     z-index: 2;
-    background-image: url(../background_1.jpg);
+    background-image: url(../background_2.jpg);
+    
 }
 
 .modal-text {
     position: absolute;
-    left: 50%;
+    left: 53%;
     top: 45%;
     transform: translate(-50%, -50%);
     z-index: 3;
@@ -67,7 +68,7 @@
     font-size: 16px;
     transition: all 0.4s ease;
     margin-top: 20px;
-    width: 70%;
+    width: 50%;
     letter-spacing: 1px;
 }
 
