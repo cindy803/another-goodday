@@ -114,13 +114,13 @@ button.rounded.active {
   content: 'o';
   font-size: 3pt;
   position: absolute;
-} */
+}
 
-/* .temp-unit.feh::after { 
+.temp-unit.feh::after { 
   content: 'f';
   font-size: 3pt;
   position: absolute;
-} */ 
+}  */
 
 /* .temp-unit {
   display: inline;

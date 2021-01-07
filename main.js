@@ -40,7 +40,7 @@ function getInfo(city) {
       let min = document.querySelector('.min');
       let max = document.querySelector('.max');
 
-      for (let i of data.list.slice(0,8)){
+      for (let i of data.list.slice(0,9)){
         minArray.push(Number(i.main.temp_min)) ; 
         maxArray.push(Number(i.main.temp_max)); 
         tempArray.push(Number(i.main.temp)) 
@@ -48,8 +48,8 @@ function getInfo(city) {
         console.log("min temp is "+ Math.min(...minArray));
         console.log("max temp is "+ Math.max(...maxArray));
         console.log("temp is "+ Math.max(...maxArray));
-        min.innerHTML = `${Math.min(...minArray)}`
-        max.innerHTML = `${Math.max(...maxArray)}`
+        min.innerHTML = `${parseInt(Math.min(...minArray))}`
+        max.innerHTML = `${parseInt(Math.max(...maxArray))}`
           
         let minArray1=[];
         let maxArray1=[];
@@ -59,16 +59,16 @@ function getInfo(city) {
         let max1 = document.querySelector('.thur-max');
         let temp2 = document.querySelector('.thur-temp');
 
-        for (let i of data.list.slice(8,16)){
+        for (let i of data.list.slice(9,18)){
           minArray1.push(Number(i.main.temp_min)) ; 
           maxArray1.push(Number(i.main.temp_max)); 
-          tempArray2.push(Number(i.main.temp))
+          // temp2.push(Number(i.main.temp))
         }
           console.log("min temp is "+ Math.min(...minArray1));
           console.log("max temp is "+ Math.max(...maxArray1));
           console.log("temp is "+ Math.max(...maxArray));
-          min1.innerHTML = `${Math.min(...minArray1)}`
-          max1.innerHTML = `${Math.max(...maxArray1)}`
+          min1.innerHTML = `${parseInt(Math.min(...minArray1))}`
+          max1.innerHTML = `${parseInt(Math.max(...maxArray1))}`
         
 
         let minArray2=[];
@@ -76,7 +76,7 @@ function getInfo(city) {
         let min2 = document.querySelector('.fri-min');
         let max2 = document.querySelector('.fri-max');
 
-        for (let i of data.list.slice(16,24)){
+        for (let i of data.list.slice(18,24)){
           minArray2.push(Number(i.main.temp_min)) ; 
           maxArray2.push(Number(i.main.temp_max)); 
       
@@ -84,8 +84,8 @@ function getInfo(city) {
           console.log("min temp is "+ Math.min(...minArray2));
           console.log("max temp is "+ Math.max(...maxArray2));
           console.log("temp is "+ Math.max(...maxArray));
-          min2.innerHTML = `${Math.min(...minArray2)}`
-          max2.innerHTML = `${Math.max(...maxArray2)}`
+          min2.innerHTML = `${parseInt(Math.min(...minArray2))}`
+          max2.innerHTML = `${parseInt(Math.max(...maxArray2))}`
 
 
         let minArray3=[];
@@ -101,8 +101,8 @@ function getInfo(city) {
           console.log("min temp is "+ Math.min(...minArray3));
           console.log("max temp is "+ Math.max(...maxArray3));
           console.log("temp is "+ Math.max(...maxArray));
-          min3.innerHTML = `${Math.min(...minArray3)}`
-          max3.innerHTML = `${Math.max(...maxArray3)}`
+          min3.innerHTML = `${parseInt(Math.min(...minArray3))}`
+          max3.innerHTML = `${parseInt(Math.max(...maxArray3))}`
 
 
         let minArray4=[];
@@ -118,8 +118,8 @@ function getInfo(city) {
           console.log("min temp is "+ Math.min(...minArray4));
           console.log("max temp is "+ Math.max(...maxArray4));
           console.log("temp is "+ Math.max(...maxArray));
-          min4.innerHTML = `${Math.min(...minArray4)}`
-          max4.innerHTML = `${Math.max(...maxArray4)}`
+          min4.innerHTML = `${parseInt(Math.min(...minArray4))}`
+          max4.innerHTML = `${parseInt(Math.max(...maxArray4))}`
 
 
         let background = document.querySelector('.background');
@@ -168,19 +168,19 @@ function getInfo(city) {
 
 
         let temp = document.querySelector('.temp-value');
-        temp.innerHTML = `${Math.round(data.list[0].main.temp)}<span>°c</span>`;
+        temp.innerHTML = `${Math.round(data.list[0].main.temp)}<span></span>`;
 
         let tempOne = document.querySelector('.thur-temp');
-        tempOne.innerHTML = `${Math.round(data.list[8].main.temp)}<span>°c</span>`;
+        tempOne.innerHTML = `${Math.round(data.list[8].main.temp)}<span></span>`;
 
         let tempTwo = document.querySelector('.fri-temp');
-        tempTwo.innerHTML = `${Math.round(data.list[16].main.temp)}<span>°c</span>`;
+        tempTwo.innerHTML = `${Math.round(data.list[16].main.temp)}<span></span>`;
 
         let tempThree = document.querySelector('.sat-temp');
-        tempThree.innerHTML = `${Math.round(data.list[24].main.temp)}<span>°c</span>`;
+        tempThree.innerHTML = `${Math.round(data.list[24].main.temp)}<span></span>`;
 
         let tempFour = document.querySelector('.sun-temp');
-        tempFour.innerHTML = `${Math.round(data.list[32].main.temp)}<span>°c</span>`;
+        tempFour.innerHTML = `${Math.round(data.list[32].main.temp)}<span></span>`;
 
         let error = document.querySelector('.error');
          if(data.cod == "404") {
@@ -207,7 +207,6 @@ function getInfo(city) {
     });
 
 }
-
 
 function onchangeCity(e) {
   if(e.keyCode != 13) return;
