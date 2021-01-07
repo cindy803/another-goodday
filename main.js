@@ -6,7 +6,7 @@ const api = {
 
 
 const imgs = { 
-    Clouds: "https://media.giphy.com/media/JOMTYlr1b2HlxGXyoS/giphy.gif",
+    Clouds: "https://media.giphy.com/media/67uxmHhIF3uh6Ph8ew/giphy.gif",
     Mist: "https://media.giphy.com/media/1uLQUtPLbJMQ0/giphy.gif",
     Rain: "https://media.giphy.com/media/oSaLJmbUgZQm4/giphy.gif",
     Snow: "https://media.giphy.com/media/N7ZiLbtDr84Yo/giphy.gif",
@@ -48,8 +48,8 @@ function getInfo(city) {
         console.log("min temp is "+ Math.min(...minArray));
         console.log("max temp is "+ Math.max(...maxArray));
         console.log("temp is "+ Math.max(...maxArray));
-        min.innerHTML = `${parseInt(Math.min(...minArray))}`
-        max.innerHTML = `${parseInt(Math.max(...maxArray))}`
+        min.innerHTML = `${parseInt(Math.min(...minArray))}°`
+        max.innerHTML = `${parseInt(Math.max(...maxArray))}°`
           
         let minArray1=[];
         let maxArray1=[];
@@ -67,8 +67,8 @@ function getInfo(city) {
           console.log("min temp is "+ Math.min(...minArray1));
           console.log("max temp is "+ Math.max(...maxArray1));
           console.log("temp is "+ Math.max(...maxArray));
-          min1.innerHTML = `${parseInt(Math.min(...minArray1))}`
-          max1.innerHTML = `${parseInt(Math.max(...maxArray1))}`
+          min1.innerHTML = `${parseInt(Math.min(...minArray1))}°`
+          max1.innerHTML = `${parseInt(Math.max(...maxArray1))}°`
         
 
         let minArray2=[];
@@ -84,8 +84,8 @@ function getInfo(city) {
           console.log("min temp is "+ Math.min(...minArray2));
           console.log("max temp is "+ Math.max(...maxArray2));
           console.log("temp is "+ Math.max(...maxArray));
-          min2.innerHTML = `${parseInt(Math.min(...minArray2))}`
-          max2.innerHTML = `${parseInt(Math.max(...maxArray2))}`
+          min2.innerHTML = `${parseInt(Math.min(...minArray2))}°`
+          max2.innerHTML = `${parseInt(Math.max(...maxArray2))}°`
 
 
         let minArray3=[];
@@ -101,8 +101,8 @@ function getInfo(city) {
           console.log("min temp is "+ Math.min(...minArray3));
           console.log("max temp is "+ Math.max(...maxArray3));
           console.log("temp is "+ Math.max(...maxArray));
-          min3.innerHTML = `${parseInt(Math.min(...minArray3))}`
-          max3.innerHTML = `${parseInt(Math.max(...maxArray3))}`
+          min3.innerHTML = `${parseInt(Math.min(...minArray3))}°`
+          max3.innerHTML = `${parseInt(Math.max(...maxArray3))}°`
 
 
         let minArray4=[];
@@ -118,8 +118,8 @@ function getInfo(city) {
           console.log("min temp is "+ Math.min(...minArray4));
           console.log("max temp is "+ Math.max(...maxArray4));
           console.log("temp is "+ Math.max(...maxArray));
-          min4.innerHTML = `${parseInt(Math.min(...minArray4))}`
-          max4.innerHTML = `${parseInt(Math.max(...maxArray4))}`
+          min4.innerHTML = `${parseInt(Math.min(...minArray4))}°`
+          max4.innerHTML = `${parseInt(Math.max(...maxArray4))}°`
 
 
         let background = document.querySelector('.background');
@@ -148,39 +148,43 @@ function getInfo(city) {
         hum.innerHTML = `${data.list[0].main.humidity}` + '%';
 
         let degree = document.querySelector('.current .feels');
-        degree.innerHTML = `${Math.round(data.list[0].main.feels_like)}<span>°c</span>`;
+        degree.innerHTML = `${Math.round(data.list[0].main.feels_like)}<span>°</span>`;
 
         let status = document.querySelector('.status');
         status.innerHTML = `${data.list[0].weather[0].main}`;
 
         let statusOne = document.querySelector('.thur-status');
-        statusOne.innerHTML = `${data.list[8].weather[0].main}`;
+        statusOne.innerHTML = `${data.list[9].weather[0].main}`;
 
         let statusTwo = document.querySelector('.fri-status');
-        statusTwo.innerHTML = `${data.list[16].weather[0].main}`;
+        statusTwo.innerHTML = `${data.list[17].weather[0].main}`;
 
         let statusThree = document.querySelector('.sat-status');
-        statusThree.innerHTML = `${data.list[24].weather[0].main}`;
+        statusThree.innerHTML = `${data.list[25].weather[0].main}`;
 
         let statusFour = document.querySelector('.sun-status');
-        statusFour.innerHTML = `${data.list[32].weather[0].main}`;
+        statusFour.innerHTML = `${data.list[33].weather[0].main}`;
 
 
 
         let temp = document.querySelector('.temp-value');
-        temp.innerHTML = `${Math.round(data.list[0].main.temp)}<span></span>`;
+        temp.innerHTML = `${Math.round(data.list[0].main.temp)}<span>°</span>`;
 
         let tempOne = document.querySelector('.thur-temp');
-        tempOne.innerHTML = `${Math.round(data.list[8].main.temp)}<span></span>`;
+        tempOne.innerHTML = `${Math.round(data.list[9].main.temp)}<span>°</span>`;
 
         let tempTwo = document.querySelector('.fri-temp');
-        tempTwo.innerHTML = `${Math.round(data.list[16].main.temp)}<span></span>`;
+        tempTwo.innerHTML = `${Math.round(data.list[17].main.temp)}<span>°</span>`;
 
         let tempThree = document.querySelector('.sat-temp');
-        tempThree.innerHTML = `${Math.round(data.list[24].main.temp)}<span></span>`;
+        tempThree.innerHTML = `${Math.round(data.list[25].main.temp)}<span>°</span>`;
 
         let tempFour = document.querySelector('.sun-temp');
-        tempFour.innerHTML = `${Math.round(data.list[32].main.temp)}<span></span>`;
+        tempFour.innerHTML = `${Math.round(data.list[33].main.temp)}<span>°</span>`;;
+
+
+        let card = document.querySelector('.card');
+
 
         let error = document.querySelector('.error');
          if(data.cod == "404") {
