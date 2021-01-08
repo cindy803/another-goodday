@@ -15,16 +15,6 @@ const imgs = {
     Haze: "https://media.giphy.com/media/d6JfdOpurCisGQdzdA/giphy.gif"
   };
 
-  function dates(d) {
-    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`
-}
 
 function getInfo(city) {
   
@@ -143,7 +133,7 @@ function getInfo(city) {
         let foreignTime = new Date(utcTime + (data.city.timezone) * 1000).toLocaleString('en', options).split(' ').slice(0, 4).join(' ');
         // console.log(foreignTime)
         let date = document.querySelector('.date');
-        date.innerHTML = `The local time is ${foreignTime}`
+        date.innerHTML = `${foreignTime}`
 
         let tomorrow = new Date();
         tomorrow.setDate(new Date().getDate()+1);
@@ -222,6 +212,8 @@ function getInfo(city) {
         let status = document.querySelector('.status');
         status.innerHTML = `${data.list[0].weather[0].main}`;
 
+        
+
         let statusOne = document.querySelector('.thur-status');
         statusOne.innerHTML = `${data.list[9].weather[0].main}`;
 
@@ -234,11 +226,11 @@ function getInfo(city) {
         let statusFour = document.querySelector('.sun-status');
         statusFour.innerHTML = `${data.list[33].weather[0].main}`;
 
-
-
         let temp = document.querySelector('.temp-value');
         temp.innerHTML = `${Math.round(data.list[0].main.temp)}<span>°</span>`;
 
+      
+      
         // let tempOne = document.querySelector('.thur-temp');
         // tempOne.innerHTML = `${Math.round(data.list[9].main.temp)}<span>°</span>`;
 
@@ -253,7 +245,6 @@ function getInfo(city) {
 
 
         let card = document.querySelector('.card');
-
 
         let error = document.querySelector('.error');
          if(data.cod == "404") {
@@ -278,6 +269,34 @@ function getInfo(city) {
   }).catch(err => {
       console.log(err);
     });
+
+}
+
+function init(resultFromServer) {
+  switch(resultFromServer.data.list[0].weather[0].main){
+    case 'Clear':
+      document.body.style.backgroundImg = 'url("../clear.png';
+      break; 
+    case 'Clouds':
+      document.body.style.backgroundImg = 'url("../cloudy.png';
+      break; 
+    case 'Rain':
+    case 'Drizzle':
+    case 'Mist':
+      document.body.style.backgroundImg = 'url(../rain.png';
+      break; 
+    case 'Thunderstorm':
+      document.body.style.backgroundImg = 'url(../storm.png';
+      break; 
+    case 'Snow':
+      document.body.style.backgroundImg = 'url(../snow.png';
+      break; 
+    default:
+      break;
+  }
+
+  let status = document.querySelector('status'); 
+  status = 'http://openweathermap.org/img/wn/' + resultFromServer.data.list[0].weather[0].main.icon + '.png'
 
 }
 
