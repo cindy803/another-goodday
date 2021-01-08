@@ -128,15 +128,91 @@ function getInfo(city) {
         place.innerHTML = `${data.city.name}, ${data.city.country}`;
 
         let now = new Date();
+        var options = {
+        weekday: "short",
+        year: "numeric",
+        month: "2-digit",
+        day: "numeric", 
+        hour: '2-digit',
+        minute: '2-digit'
+        };
         let localTime = now.getTime()
         let localOffset = (now.getTimezoneOffset() * 60000)
-        console.log(localOffset)
+        // console.log(localOffset)
         let utcTime = localTime + localOffset; 
-        let ForeignTime = new Date(utcTime + (data.city.timezone) * 1000).toLocaleString().replace( / GMT$/, "" )
-        let date = document.querySelector('.location .date');
-        date.innerHTML = `The local time ${ForeignTime}`
+        let foreignTime = new Date(utcTime + (data.city.timezone) * 1000).toLocaleString('en', options).split(' ').slice(0, 4).join(' ');
+        // console.log(foreignTime)
+        let date = document.querySelector('.date');
+        date.innerHTML = `The local time is ${foreignTime}`
+
+        let tomorrow = new Date();
+        tomorrow.setDate(new Date().getDate()+1);
+        var options = {
+        weekday: "short",
+        };
+        let localTime1 = tomorrow.getTime()
+        let localOffset1 = (tomorrow.getTimezoneOffset() * 60000)
+        // console.log(localOffset)
+        let utcTime1 = localTime1 + localOffset1; 
+        let foreignTime1 = new Date(utcTime1 + (data.city.timezone) * 1000).toLocaleString('en', options).split(' ').slice(0, 4).join(' ');
+        // console.log(foreignTime)
+        let date1 = document.querySelector('.date-1');
+
+        date1.innerHTML = foreignTime1
+
+        let tomorrow1 = new Date();
+        tomorrow1.setDate(new Date().getDate()+2);
+        var options = {
+        weekday: "short",
+        };
+        let localTime2 = tomorrow1.getTime()
+        let localOffset2 = (tomorrow1.getTimezoneOffset() * 60000)
+        // console.log(localOffset)
+        let utcTime2 = localTime2 + localOffset2; 
+        let foreignTime2 = new Date(utcTime2 + (data.city.timezone) * 1000).toLocaleString('en', options).split(' ').slice(0, 4).join(' ');
+        // console.log(foreignTime)
+        let date2 = document.querySelector('.date-2');
+
+        date2.innerHTML = foreignTime2
+
+        let tomorrow2 = new Date();
+        tomorrow2.setDate(new Date().getDate()+3);
+
+        var options = {
+        weekday: "short",
+        };
+        let localTime3 = tomorrow2.getTime()
+        let localOffset3 = (tomorrow2.getTimezoneOffset() * 60000)
+        // console.log(localOffset)
+        let utcTime3 = localTime3 + localOffset3; 
+        let foreignTime3 = new Date(utcTime3 + (data.city.timezone) * 1000).toLocaleString('en', options).split(' ').slice(0, 4).join(' ');
+        // console.log(foreignTime)
+        let date3 = document.querySelector('.date-3');
+        date3.innerHTML = foreignTime3
       
- 
+        let tomorrow3 = new Date();
+        tomorrow3.setDate(new Date().getDate()+4);
+
+        var options = {
+        weekday: "short",
+        };
+        let localTime4 = tomorrow3.getTime()
+        let localOffset4 = (tomorrow3.getTimezoneOffset() * 60000)
+        // console.log(localOffset)
+        let utcTime4 = localTime4 + localOffset4; 
+        let foreignTime4 = new Date(utcTime4 + (data.city.timezone) * 1000).toLocaleString('en', options).split(' ').slice(0, 4).join(' ');
+        // console.log(foreignTime)
+        let date4 = document.querySelector('.date-4');
+
+        date4.innerHTML = foreignTime4
+       
+
+
+
+
+
+
+  
         let hum = document.querySelector('.hum');
         hum.innerHTML = `${data.list[0].main.humidity}` + '%';
 
@@ -163,17 +239,17 @@ function getInfo(city) {
         let temp = document.querySelector('.temp-value');
         temp.innerHTML = `${Math.round(data.list[0].main.temp)}<span>°</span>`;
 
-        let tempOne = document.querySelector('.thur-temp');
-        tempOne.innerHTML = `${Math.round(data.list[9].main.temp)}<span>°</span>`;
+        // let tempOne = document.querySelector('.thur-temp');
+        // tempOne.innerHTML = `${Math.round(data.list[9].main.temp)}<span>°</span>`;
 
-        let tempTwo = document.querySelector('.fri-temp');
-        tempTwo.innerHTML = `${Math.round(data.list[17].main.temp)}<span>°</span>`;
+        // let tempTwo = document.querySelector('.fri-temp');
+        // tempTwo.innerHTML = `${Math.round(data.list[17].main.temp)}<span>°</span>`;
 
-        let tempThree = document.querySelector('.sat-temp');
-        tempThree.innerHTML = `${Math.round(data.list[25].main.temp)}<span>°</span>`;
+        // let tempThree = document.querySelector('.sat-temp');
+        // tempThree.innerHTML = `${Math.round(data.list[25].main.temp)}<span>°</span>`;
 
-        let tempFour = document.querySelector('.sun-temp');
-        tempFour.innerHTML = `${Math.round(data.list[33].main.temp)}<span>°</span>`;;
+        // let tempFour = document.querySelector('.sun-temp');
+        // tempFour.innerHTML = `${Math.round(data.list[33].main.temp)}<span>°</span>`;;
 
 
         let card = document.querySelector('.card');
