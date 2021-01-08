@@ -165,11 +165,11 @@ button.rounded.active {
   justify-content: center;
   font-size: 60px;
   font-weight: 800;
+  font-family: 'Balsamiq Sans', cursive;
   /* margin-left: 100px; */
 }
 .place, .status {
-  margin-top: -10%;
-  
+  margin-top: -20%;
 }
 .status {
   color: black;
@@ -184,7 +184,8 @@ button.rounded.active {
   vertical-align: middle;
   font-size: 60px;
   font-weight: 800;
-  
+  font-family: 'Balsamiq Sans', cursive;
+
 }
 .temp-value {
   display: flex;
@@ -192,6 +193,7 @@ button.rounded.active {
   font-family: sans-serif;
   font-size: 50px; 
   margin-top: 5%;
+  
 }
 /* .temp-unit.cel::after { 
   content: 'o';

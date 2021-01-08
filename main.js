@@ -130,19 +130,12 @@ function getInfo(city) {
         let now = new Date();
         let localTime = now.getTime()
         let localOffset = (now.getTimezoneOffset() * 60000)
+        console.log(localOffset)
         let utcTime = localTime + localOffset; 
-        let timeOffset = 12; 
-        let ForeignTime = new Date(utcTime + (360000 * timeOffset))
+        let ForeignTime = new Date(utcTime + (data.city.timezone) * 1000).toLocaleString().replace( / GMT$/, "" )
         let date = document.querySelector('.location .date');
-        if (data.city.country === 'US') {
-          date.innerText = dates(now);
-        }else if (data.city.country === 'CA'){
-          date.innerText = dates(now);
-        }else if (data.city.country === 'MX'){
-          date.innerText = dates(now);
-        }else{
-          date.innerText = dates(ForeignTime);
-        }
+        date.innerHTML = `The local time ${ForeignTime}`
+      
  
         let hum = document.querySelector('.hum');
         hum.innerHTML = `${data.list[0].main.humidity}` + '%';
