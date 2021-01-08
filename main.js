@@ -15,7 +15,7 @@ const imgs = {
     Haze: "https://media.giphy.com/media/d6JfdOpurCisGQdzdA/giphy.gif"
   };
 
-
+let resultFromServer 
 function getInfo(city) {
   
   let unit =  document.querySelector('button.active').innerText;
@@ -23,7 +23,8 @@ function getInfo(city) {
   fetch(`${api.base}forecast?q=${city}&units=${unit_map}&appid=${api.key}`)
     .then(response => response.json())
     .then(data => {console.log(data)
-     
+      resultFromServer = data 
+ 
       let minArray=[];
       let maxArray=[];  
       let tempArray=[];
@@ -195,14 +196,7 @@ function getInfo(city) {
         let date4 = document.querySelector('.date-4');
 
         date4.innerHTML = foreignTime4
-       
-
-
-
-
-
-
-  
+      
         let hum = document.querySelector('.hum');
         hum.innerHTML = `${data.list[0].main.humidity}` + '%';
 
@@ -211,8 +205,6 @@ function getInfo(city) {
 
         let status = document.querySelector('.status');
         status.innerHTML = `${data.list[0].weather[0].main}`;
-
-        
 
         let statusOne = document.querySelector('.thur-status');
         statusOne.innerHTML = `${data.list[9].weather[0].main}`;
@@ -228,21 +220,6 @@ function getInfo(city) {
 
         let temp = document.querySelector('.temp-value');
         temp.innerHTML = `${Math.round(data.list[0].main.temp)}<span>°</span>`;
-
-      
-      
-        // let tempOne = document.querySelector('.thur-temp');
-        // tempOne.innerHTML = `${Math.round(data.list[9].main.temp)}<span>°</span>`;
-
-        // let tempTwo = document.querySelector('.fri-temp');
-        // tempTwo.innerHTML = `${Math.round(data.list[17].main.temp)}<span>°</span>`;
-
-        // let tempThree = document.querySelector('.sat-temp');
-        // tempThree.innerHTML = `${Math.round(data.list[25].main.temp)}<span>°</span>`;
-
-        // let tempFour = document.querySelector('.sun-temp');
-        // tempFour.innerHTML = `${Math.round(data.list[33].main.temp)}<span>°</span>`;;
-
 
         let card = document.querySelector('.card');
 
@@ -272,31 +249,40 @@ function getInfo(city) {
 
 }
 
-function init(resultFromServer) {
-  switch(resultFromServer.data.list[0].weather[0].main){
+function init() {
+
+  let statusImg = document.querySelector('#icon'); 
+  console.log(statusImg);
+  console.log('resultFromServer', resultFromServer); 
+  // statusImg.src = './stylesheet/images/clear.png'
+
+  switch(resultFromServer.list[0].weather[0].main){
     case 'Clear':
-      document.body.style.backgroundImg = 'url("../clear.png';
+      
+      statusImg.src = "./stylesheet/images/clear.png"
+
+      // document.getElementById('icon').style.backgroundImage = 'url(./images/clear.png)';
       break; 
     case 'Clouds':
-      document.body.style.backgroundImg = 'url("../cloudy.png';
+      statusImg.src = "./stylesheet/images/cloudy.png"
       break; 
     case 'Rain':
     case 'Drizzle':
     case 'Mist':
-      document.body.style.backgroundImg = 'url(../rain.png';
+      statusImg.src = "./stylesheet/images/rain.png"
       break; 
     case 'Thunderstorm':
-      document.body.style.backgroundImg = 'url(../storm.png';
+      statusImg.src = "./stylesheet/images/storm.png"
       break; 
     case 'Snow':
-      document.body.style.backgroundImg = 'url(../snow.png';
+      statusImg.src = "./stylesheet/images/snow.png"
       break; 
     default:
       break;
   }
 
-  let status = document.querySelector('status'); 
-  status = 'http://openweathermap.org/img/wn/' + resultFromServer.data.list[0].weather[0].main.icon + '.png'
+  
+  statusImg = 'http://openweathermap.org/img/wn/' + resultFromServer.list[0].weather[0].main.icon + '.png'
 
 }
 
@@ -304,6 +290,8 @@ function onchangeCity(e) {
   if(e.keyCode != 13) return;
   var city = document.querySelector('.place').value;
   getInfo(city);
+  setTimeout(() => {init(resultFromServer)}, 500);
+  // init(resultFromServer)
   // getTodayInfo(city)
   
 }
