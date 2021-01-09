@@ -296,6 +296,7 @@ function onchangeCity(e) {
   
 }
 getInfo("toronto");
+setTimeout(() => {init(resultFromServer)}, 500);
 // getTodayInfo('toronto');
 
 function changeUnit(e) {
@@ -303,9 +304,7 @@ function changeUnit(e) {
   document.querySelector('button.active').classList.toggle('active')
   button.classList.add('active');
   
-  getInfo(document.querySelector('.place-name').innerText.split(" ")[0]);
-  // getTodayInfo(document.querySelector('.place-name').innerText.split(" ")[0])
-  
+  getInfo(document.querySelector('.place-name').innerText.split(" ")[0]);  
 }
 
 document.querySelectorAll('button').forEach(
