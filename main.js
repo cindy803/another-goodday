@@ -22,7 +22,8 @@ function getInfo(city) {
   let unit_map = unit == "C" ? 'metric' : 'imperial'; 
   fetch(`${api.base}forecast?q=${city}&units=${unit_map}&appid=${api.key}`)
     .then(response => response.json())
-    .then(data => {console.log(data)
+    .then(data => {
+      // console.log(data)
       resultFromServer = data 
  
       let minArray=[];
@@ -36,9 +37,9 @@ function getInfo(city) {
         maxArray.push(Number(i.main.temp_max)); 
         tempArray.push(Number(i.main.temp)) 
       }
-        console.log("min temp is "+ Math.min(...minArray));
-        console.log("max temp is "+ Math.max(...maxArray));
-        console.log("temp is "+ Math.max(...maxArray));
+        // console.log("min temp is "+ Math.min(...minArray));
+        // console.log("max temp is "+ Math.max(...maxArray));
+        // console.log("temp is "+ Math.max(...maxArray));
         min.innerHTML = `${parseInt(Math.min(...minArray))}°`
         max.innerHTML = `${parseInt(Math.max(...maxArray))}°`
           
@@ -55,9 +56,9 @@ function getInfo(city) {
           maxArray1.push(Number(i.main.temp_max)); 
           // temp2.push(Number(i.main.temp))
         }
-          console.log("min temp is "+ Math.min(...minArray1));
-          console.log("max temp is "+ Math.max(...maxArray1));
-          console.log("temp is "+ Math.max(...maxArray));
+          // console.log("min temp is "+ Math.min(...minArray1));
+          // console.log("max temp is "+ Math.max(...maxArray1));
+          // console.log("temp is "+ Math.max(...maxArray));
           min1.innerHTML = `${parseInt(Math.min(...minArray1))}°`
           max1.innerHTML = `${parseInt(Math.max(...maxArray1))}°`
         
@@ -72,9 +73,9 @@ function getInfo(city) {
           maxArray2.push(Number(i.main.temp_max)); 
       
         }
-          console.log("min temp is "+ Math.min(...minArray2));
-          console.log("max temp is "+ Math.max(...maxArray2));
-          console.log("temp is "+ Math.max(...maxArray));
+          // console.log("min temp is "+ Math.min(...minArray2));
+          // console.log("max temp is "+ Math.max(...maxArray2));
+          // console.log("temp is "+ Math.max(...maxArray));
           min2.innerHTML = `${parseInt(Math.min(...minArray2))}°`
           max2.innerHTML = `${parseInt(Math.max(...maxArray2))}°`
 
@@ -89,9 +90,9 @@ function getInfo(city) {
           maxArray3.push(Number(i.main.temp_max)); 
       
         }
-          console.log("min temp is "+ Math.min(...minArray3));
-          console.log("max temp is "+ Math.max(...maxArray3));
-          console.log("temp is "+ Math.max(...maxArray));
+          // console.log("min temp is "+ Math.min(...minArray3));
+          // console.log("max temp is "+ Math.max(...maxArray3));
+          // console.log("temp is "+ Math.max(...maxArray));
           min3.innerHTML = `${parseInt(Math.min(...minArray3))}°`
           max3.innerHTML = `${parseInt(Math.max(...maxArray3))}°`
 
@@ -106,9 +107,9 @@ function getInfo(city) {
           maxArray4.push(Number(i.main.temp_max)); 
       
         }
-          console.log("min temp is "+ Math.min(...minArray4));
-          console.log("max temp is "+ Math.max(...maxArray4));
-          console.log("temp is "+ Math.max(...maxArray));
+          // console.log("min temp is "+ Math.min(...minArray4));
+          // console.log("max temp is "+ Math.max(...maxArray4));
+          // console.log("temp is "+ Math.max(...maxArray));
           min4.innerHTML = `${parseInt(Math.min(...minArray4))}°`
           max4.innerHTML = `${parseInt(Math.max(...maxArray4))}°`
 
@@ -252,8 +253,8 @@ function getInfo(city) {
 function init() {
 
   let statusImg = document.querySelector('#icon'); 
-  console.log(statusImg);
-  console.log('resultFromServer', resultFromServer); 
+  // console.log(statusImg);
+  // console.log('resultFromServer', resultFromServer); 
   // statusImg.src = './stylesheet/images/clear.png'
 
   switch(resultFromServer.list[0].weather[0].main){
