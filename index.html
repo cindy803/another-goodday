@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,105 +9,110 @@
     <title>another Good day</title>
     <link rel="icon" href="./stylesheet/images/favicon.png">
 </head>
+
 <body>
-        <div class="container">
-            <div class="background">
-                
-                    <img class="temp-img" src="" />
-                    
-                <div class="search">
-                    <small>City</small> <input class="place" autocomplete='off' placeholder="Search for a city..." onkeyup="onchangeCity(event)">
-                    <div class="error"></div>
+    <div class="container">
+        <div class="background">
+
+            <img class="temp-img" src="" />
+
+            <div class="search">
+                <small>City</small> <input class="place" autocomplete='off' placeholder="Search for a city..."
+                    onkeyup="onchangeCity(event)">
+                <div class="error"></div>
+            </div>
+            <div class='bottom-left'>
+                <div class="button-container">
+                    <button class="rounded">F</button>
+                    <button class="rounded active">C</button>
                 </div>
-                <div class='bottom-left'>
-                    <div class="button-container">
-                        <button class="rounded">F</button>
-                        <button class="rounded active">C</button>
+                <div class='card1'>
+                    <div class="location">
+                        <div class='date'>Mon 4 Jan 2021</div>
                     </div>
-                    <div class='card1'>
-                        <div class="location">
-                            <div class='date'>Mon 4 Jan 2021</div>
-                        </div>
                     <div class="temp">
                         <span class="temp-value"></span> <span class="temp-unit"></span>
                     </div>
                     <div class='minmax'>
-                        <b class="min">00</b><span class="temp-unit cel"></span> / <b class="max">00</b><span class="temp-unit cel"></span>
+                        <b class="min">00</b><span class="temp-unit cel"></span> / <b class="max">00</b><span
+                            class="temp-unit cel"></span>
                     </div>
                     <div class='current'>
                         <img class="status-img" id='icon' style="z-index: 999" />
                         <br class='feels-wrapper'>Feels like
                         <b class='feels'>5</b><span></span>
-                    <br class="hum-wrapper">Humidity
-                    <b class='hum'>82</b>
+                        <br class="hum-wrapper">Humidity
+                        <b class='hum'>82</b>
                     </div>
-                    </div>
-                    
-                    <div class="weather">
-                        <div class="place-container">
-                            <h4 class="place-name"></h4>
-                            <h6 class="status"></h6>
-                        <!-- <div class='status-img-container'> -->
-                            <!-- <img class="status-img" id='icon' style="z-index: 999" /> -->
-                        <!-- </div> -->
-                        </div>
-                    </div>
-                            
-                        </div>
-                        </div>
-                   
-                 
-                        <div class='card2'>
-                            <table>
-                                <tr>
-                                    <td class='date-1'>Thur</td>
-                                    <td class='date-2'>Fri</td>
-                                    <td class='date-3'>Sat</td>
-                                    <td class='date-4'>Sun</td>
-                                </tr>
-                                <tr>
-                                    <td class='thur-status'></td>
-                                    <td class='fri-status'></td>
-                                    <td class='sat-status'></td>
-                                    <td class='sun-status'></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td class='thur-temp'></td>
-                                    <td class='fri-temp'></td>
-                                    <td class='sat-temp'></td>
-                                    <td class='sun-temp'></td>
-                                </tr>
-                                <tr>
-                                    <td class='thur-min'>Min</td>  
-                                    <td class='fri-min'>Min</td>  
-                                    <td class='sat-min'>Min</td>  
-                                    <td class='sun-min'>Min</td>  
-                                </tr>
-                                <tr>
-                                    
-                                    <td class='thur-max'>Max</td>
-                                    <td class='fri-max'>Max</td>
-                                    <td class='sat-max'>Max</td>
-                                    <td class='sun-max'>Max</td>
-                                </tr>
-                            </table>
-                        </div> 
                 </div>
-            </div>     
+
+                <div class="weather">
+                    <div class="place-container">
+                        <h4 class="place-name"></h4>
+                        <h6 class="status"></h6>
+                        <!-- <div class='status-img-container'> -->
+                        <!-- <img class="status-img" id='icon' style="z-index: 999" /> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class='card2'>
+            <table>
+                <tr>
+                    <td class='date-1'>Thur</td>
+                    <td class='date-2'>Fri</td>
+                    <td class='date-3'>Sat</td>
+                    <td class='date-4'>Sun</td>
+                </tr>
+                <tr>
+                    <td class='thur-status'></td>
+                    <td class='fri-status'></td>
+                    <td class='sat-status'></td>
+                    <td class='sun-status'></td>
+
+                </tr>
+                <tr>
+                    <td class='thur-temp'></td>
+                    <td class='fri-temp'></td>
+                    <td class='sat-temp'></td>
+                    <td class='sun-temp'></td>
+                </tr>
+                <tr>
+                    <td class='thur-min'>Min</td>
+                    <td class='fri-min'>Min</td>
+                    <td class='sat-min'>Min</td>
+                    <td class='sun-min'>Min</td>
+                </tr>
+                <tr>
+
+                    <td class='thur-max'>Max</td>
+                    <td class='fri-max'>Max</td>
+                    <td class='sat-max'>Max</td>
+                    <td class='sun-max'>Max</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
     </div>
     <script src='main.js'></script>
     <div class="modal is-open">
         <div class="modal-text">
             <h1 class="modal-title">another Good day</h1>
             <h2>by Cindy Li</h2>
-            <p>Should I dress warm? Do I need an umbrella? Wonder no more! See the temperature and weather forecast for locations around the world! 
+            <p>Should I dress warm? Do I need an umbrella? Wonder no more! See the temperature and weather forecast for
+                locations around the world!
             </p>
             <button class="modal-close">Get Started!</button>
         </div>
-    
+
         <div class="modal-screen"></div>
         <script src="modal.js"></script>
     </div>
 </body>
+
 </html>

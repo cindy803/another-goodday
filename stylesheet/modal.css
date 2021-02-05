@@ -14,8 +14,6 @@
     right: 0;
     z-index: 2;
     background-image: url(./images/background_2.jpg);
- 
-    
 }
 
 .modal-text {
@@ -40,6 +38,11 @@
     margin-bottom: 5px;
 }
 
+.modal-text > a {
+    height: 10%;
+    width: 20%;
+}
+
 .modal-text > h2 {
     font-size: 14px;
     padding: 0px 20px;
@@ -48,6 +51,7 @@
     margin-bottom: 20px;
     color: gray;
 }
+
 
 .modal-text > p {
     font-size: 18px;
@@ -69,7 +73,7 @@
     font-size: 16px;
     transition: all 0.4s ease;
     margin-top: 20px;
-    width: 50%;
+    width: 40%;
     letter-spacing: 1px;
 }
 
@@ -80,3 +84,4 @@
     border: 1px solid rgb(106, 106, 206);
     transition: all 0.4s ease;
 }
+
