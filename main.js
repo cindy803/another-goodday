@@ -117,7 +117,8 @@ function getInfo(city) {
         let background = document.querySelector('.background');
 
         let place  = document.querySelector('.place-name');
-        place.innerHTML = `${data.city.name}, ${data.city.country}`;
+        place.innerHTML = 
+                  `${data.city.name.split(' ').join('')}, ${data.city.country}`;
 
         let now = new Date();
         var options = {
@@ -292,13 +293,9 @@ function onchangeCity(e) {
   var city = document.querySelector('.place').value;
   getInfo(city);
   setTimeout(() => {init(resultFromServer)}, 500);
-  // init(resultFromServer)
-  // getTodayInfo(city)
-  
 }
 getInfo("toronto");
 setTimeout(() => {init(resultFromServer)}, 500);
-// getTodayInfo('toronto');
 
 function changeUnit(e) {
   var button = e.target;
