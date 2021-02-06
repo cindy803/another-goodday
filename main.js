@@ -118,7 +118,7 @@ function getInfo(city) {
 
         let place  = document.querySelector('.place-name');
         place.innerHTML = 
-                  `${data.city.name.split(' ').join('')}, ${data.city.country}`;
+                  `${data.city.name}, ${data.city.country}`;
 
         let now = new Date();
         var options = {
