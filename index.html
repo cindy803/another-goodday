@@ -8,6 +8,29 @@
     <link rel="stylesheet" href="./stylesheet/modal.css">
     <title>another Good day</title>
     <link rel="icon" href="./stylesheet/images/favicon.png">
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+    </style>
+    
+    <title>Google Maps JavaScript API v3 Example: Places Autocomplete</title>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBzPF5wr0A_SSIf9JNkr82bcMHkmcbgtZw&libraries=places"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+        function initialize() {
+
+            var options = {
+                types: ['(cities)'],
+                // componentRestrictions: { country: "us" }
+            };
+
+            var input = document.getElementById('searchTextField');
+            var autocomplete = new google.maps.places.Autocomplete(input, options);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
     
 </head>
@@ -19,7 +42,7 @@
             <img class="temp-img" src="" />
             <div class="search">
                 <small>City</small> 
-                <input class="place" autocomplete='off' type='search' placeholder="Search for a city..."
+                <input id="searchTextField" class="place" type="text" size="50" placeholder="Enter a location" autocomplete="on"
                     onkeyup="onchangeCity(event)">
                
                 <div class="error"></div>
