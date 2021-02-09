@@ -23,7 +23,7 @@ function getInfo(city) {
   fetch(`${api.base}forecast?q=${city}&units=${unit_map}&appid=${api.key}`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      // console.log(data)
       resultFromServer = data 
  
       let minArray=[];
