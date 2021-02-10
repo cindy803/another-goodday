@@ -22,9 +22,19 @@
             var autocomplete = new google.maps.places.Autocomplete(input, options);
 
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var place = autocomplete.getPlace();
-                // console.log(place);
+                var placeOne = autocomplete.getPlace();
+                console.log(placeOne);
+
+                // let place = document.querySelector('.place-name');
+                // // // // if (resultFromServer.cod === "404") {
+                //     place.innerHTML =
+                //         `${placeOne.formatted_address}`;
+                // } else {
+                //     place.innerHTML =
+                //         `${resultFromServer.city.name}, ${resultFromServer.city.country}`;
+                // }
             })
+            
             
         }
         

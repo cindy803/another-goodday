@@ -266,6 +266,8 @@ input.place {
 
 .error { 
   color: red;
+  z-index: 20;
+  
 }
 
 /* .info {

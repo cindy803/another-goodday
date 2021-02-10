@@ -22,8 +22,10 @@ function getInfo(city) {
   let unit_map = unit == "C" ? 'metric' : 'imperial'; 
   fetch(`${api.base}forecast?q=${city}&units=${unit_map}&appid=${api.key}`)
     .then(response => response.json())
+    
     .then(data => {
-      // console.log(data)
+      initialize(data)
+      console.log(data)
       resultFromServer = data 
  
       let minArray=[];
@@ -116,9 +118,22 @@ function getInfo(city) {
 
         let background = document.querySelector('.background');
 
-        let place  = document.querySelector('.place-name');
-        place.innerHTML = 
-                  `${data.city.name}, ${data.city.country}`;
+        let place = document.querySelector('.place-name');
+        place.innerHTML = (resultFromServer.cod) === '404' ? 
+                  `${placeOne.formatted_address}` : (`${data.city.name}, ${data.city.country}`);
+
+        // let place = document.querySelector('.place-name');
+        //         place.innerHTML =
+        //             `${placeOne.name}`;
+
+        //  let place = document.querySelector('.place-name') ; 
+        //         if ((data.cod === '404')){
+        //              place.innerHTML =
+        //                 `${placeOne.name}, ${placeOne.address_components[1].long_name}`;
+        //         }else{
+        //             place.innerHTML =
+        //             `${data.city.name}, ${data.city.country}`;
+        //         }
 
         let now = new Date();
         var options = {
@@ -226,8 +241,8 @@ function getInfo(city) {
         let card = document.querySelector('.card');
 
         let error = document.querySelector('.error');
-         if(data.cod == "404") {
-            error.innerHTML = `${data.message}`
+         if(data.cod === "404") {
+            error.getElementById('error').innerHTML = `${data.message}`
             return error;
         }
 
@@ -245,8 +260,8 @@ function getInfo(city) {
       }
     })
   
-  }).catch(err => {
-      console.log(err);
+  }).catch(error => {
+      console.log(error);
     });
 
 }
@@ -287,11 +302,12 @@ function init() {
 }
 
 function onchangeCity(e) {
-  if(e.keyCode !== 13) {
+  if(e.which === 13 || e.keyCode === 13) {
     e.preventDefault();
-
+    return false
   }
   var city = document.querySelector('.place').value;
+  
   getInfo(city);
   setTimeout(() => {init(resultFromServer)}, 500);
 }
