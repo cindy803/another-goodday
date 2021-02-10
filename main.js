@@ -262,8 +262,6 @@ function init() {
     case 'Clear':
       
       statusImg.src = "./stylesheet/images/clear.png"
-
-      // document.getElementById('icon').style.backgroundImage = 'url(./images/clear.png)';
       break; 
     case 'Clouds':
       statusImg.src = "./stylesheet/images/cloudy.png"
@@ -291,7 +289,7 @@ function init() {
 function onchangeCity(e) {
   if(e.keyCode !== 13) {
     e.preventDefault();
-    
+
   }
   var city = document.querySelector('.place').value;
   getInfo(city);
