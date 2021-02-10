@@ -289,7 +289,10 @@ function init() {
 }
 
 function onchangeCity(e) {
-  // if(e.keyCode !== 13) return;
+  if(e.keyCode !== 13) {
+    e.preventDefault();
+    
+  }
   var city = document.querySelector('.place').value;
   getInfo(city);
   setTimeout(() => {init(resultFromServer)}, 500);
