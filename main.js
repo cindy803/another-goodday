@@ -276,21 +276,21 @@ function init() {
   switch(resultFromServer.list[0].weather[0].main){
     case 'Clear':
       
-      statusImg.src = "./stylesheet/images/clear.png"
+      statusImg.src = "./images/clear.png"
       break; 
     case 'Clouds':
-      statusImg.src = "./stylesheet/images/cloudy.png"
+      statusImg.src = "./images/cloudy.png"
       break; 
     case 'Rain':
     case 'Drizzle':
     case 'Mist':
-      statusImg.src = "./stylesheet/images/rain.png"
+      statusImg.src = "./images/rain.png"
       break; 
     case 'Thunderstorm':
-      statusImg.src = "./stylesheet/images/storm.png"
+      statusImg.src = "./images/storm.png"
       break; 
     case 'Snow':
-      statusImg.src = "./stylesheet/images/snow.png"
+      statusImg.src = "./images/snow.png"
       break; 
     default:
       break;
