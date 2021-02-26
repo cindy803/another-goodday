@@ -16,5 +16,5 @@ Live Site: [another Good day](https://cindy803.github.io/another-goodday/)
 * Users can search for any locations to view the current weather condition 
 * Users can view the current local dates and times 
 * Users can view the weather condition for next four days 
-* background and weather emojis change as the weather condition changes
+* Users can search for locations with search dropdown 
 
