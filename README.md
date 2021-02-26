@@ -2,7 +2,7 @@
 
 another Good day is a weather tracking website that allows users to search and view the current weather condition of anywhere in the world. Users can search for any locations and able to see the local time and local weather condititon for today as well as for next four days.
 
-[Live Site](https://cindy803.github.io/another-goodday/)
+Live Site: [another Good day](https://cindy803.github.io/another-goodday/)
 
 ![splash](./images/project_pic.png)
 
